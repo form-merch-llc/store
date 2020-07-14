@@ -16,8 +16,6 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "form",
-        "USER": "form",
-        "PASSWORD": "F0rmM3rchLLC",
         "HOST": "127.0.0.1",
     }
 }

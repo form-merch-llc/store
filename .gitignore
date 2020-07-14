@@ -67,6 +67,9 @@ htmlcov/
 nosetests.xml
 coverage.xml
 
+# Virtual environment
+.venv/
+
 # Translations
 *.mo
 *.pot
@@ -88,3 +91,4 @@ local_settings.py
 .venv
 .env
 db.sqlite3
+public_html/

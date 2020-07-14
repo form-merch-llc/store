@@ -5,7 +5,7 @@ DEFAULT_VALUE = "DEFAULT"
 SECRET_KEY = "ou38m!%v0d#j@t(_djgc6=ji%djtlsi+b3!a3g7wwe(t5xq*)h"
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-PROJECT_DIR = BASE_DIR.parent.parent
+PROJECT_DIR = BASE_DIR.parent
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -17,8 +17,8 @@ INSTALLED_APPS = [
     "django.contrib.postgres",
     #
     "ariadne.contrib.django",
-    "sorl.thumbnail",
     #
+    "STORE.product",
 ]
 
 MIDDLEWARE = [
@@ -36,7 +36,7 @@ ROOT_URLCONF = "STORE.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["account/templates"],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -56,9 +56,7 @@ WSGI_APPLICATION = "STORE.wsgi.application"
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -83,15 +81,8 @@ STATIC_ROOT = str(Path(PROJECT_DIR, "public_html/static"))
 
 FIRST_DAY_OF_WEEK = 1
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
-    }
-}
+CACHES = {"default": {"BACKEND": "django_redis.cache.RedisCache", "LOCATION": "redis://127.0.0.1:6379/0",}}
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
-# sorl-thumbnail
-THUMBNAIL_ENGINE = "sorl.thumbnail.engines.wand_engine.Engine"
 
 CORS_ORIGIN_ALLOW_ALL = True
